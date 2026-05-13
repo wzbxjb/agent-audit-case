@@ -117,11 +117,253 @@
 
 <script>
 const auditData = {
-  "meta": {"brand": "TechGlow", "evaluation_date": "2026-05-15"},
-  "overall": {"avg_composite_score": 49.7, "avg_hallucination_rate": 5.8, "overall_claim_accuracy": 65.2,
-    "best_agent": {"name": "social_media_manager", "score": 78.4},
-    "worst_agent": {"name": "content_creator", "score": 25.4}},
-  "agents": {}
+  "meta": {
+    "project": "Agent Quality Audit — digital-marketing-pro Case Study",
+    "brand": "TechGlow",
+    "evaluation_date": "2026-05-15",
+    "total_files": 8,
+    "total_agents": 4
+  },
+  "overall": {
+    "avg_composite_score": 49.7,
+    "avg_hallucination_rate": 16.8,
+    "overall_claim_accuracy": 0.0,
+    "best_agent": {
+      "name": "social_media_manager",
+      "score": 78.4
+    },
+    "worst_agent": {
+      "name": "content_creator",
+      "score": 25.4
+    }
+  },
+  "agents": {
+    "content_creator": {
+      "agent": "content_creator",
+      "files_evaluated": 2,
+      "composite_score": 25.4,
+      "scores": {
+        "hallucination": 26.0,
+        "claim_verification": 0.0,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 0,
+          "interpretation": "Critical hallucination risk - do not publish",
+          "total_flags": 32,
+          "by_type": {
+            "unverified_statistics": 23,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 9,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 52,
+          "interpretation": "High hallucination risk - revision required",
+          "total_flags": 12,
+          "by_type": {
+            "unverified_statistics": 9,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 3,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 39,
+        "contradicted": 0,
+        "total": 39
+      },
+      "all_issues": [
+        "Missing required section: 'title'",
+        "Missing required section: 'conclusion'",
+        "Missing required section: 'title'",
+        "Missing required section: 'conclusion'"
+      ]
+    },
+    "email_specialist": {
+      "agent": "email_specialist",
+      "files_evaluated": 2,
+      "composite_score": 47.0,
+      "scores": {
+        "hallucination": 80.0,
+        "claim_verification": 0.0,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 84,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 4,
+          "by_type": {
+            "unverified_statistics": 1,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 3,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 76,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 6,
+          "by_type": {
+            "unverified_statistics": 5,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 1,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 4,
+        "contradicted": 0,
+        "total": 4
+      },
+      "all_issues": [
+        "Missing required section: 'body'",
+        "Missing required section: 'cta'",
+        "Missing required section: 'body'",
+        "Missing required section: 'cta'"
+      ]
+    },
+    "seo_specialist": {
+      "agent": "seo_specialist",
+      "files_evaluated": 2,
+      "composite_score": 48.0,
+      "scores": {
+        "hallucination": 76.0,
+        "claim_verification": 7.5,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 80,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 5,
+          "by_type": {
+            "unverified_statistics": 0,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 5,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 72,
+          "interpretation": "Moderate hallucination risk - review recommended",
+          "total_flags": 6,
+          "by_type": {
+            "unverified_statistics": 2,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 4,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 1
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 1,
+        "unverified": 4,
+        "contradicted": 0,
+        "total": 5
+      },
+      "all_issues": [
+        "Missing required section: 'target_audience'",
+        "Missing required section: 'key_messages'",
+        "Missing required section: 'objective'",
+        "Missing required section: 'key_messages'"
+      ]
+    },
+    "social_media_manager": {
+      "agent": "social_media_manager",
+      "files_evaluated": 2,
+      "composite_score": 78.4,
+      "scores": {
+        "hallucination": 96.0,
+        "claim_verification": 50.0,
+        "output_validation": 90.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 100,
+          "interpretation": "Minimal hallucination risk",
+          "total_flags": 0,
+          "by_type": {
+            "unverified_statistics": 0,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 0,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 92,
+          "interpretation": "Minimal hallucination risk",
+          "total_flags": 2,
+          "by_type": {
+            "unverified_statistics": 1,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 1,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 1,
+        "contradicted": 0,
+        "total": 1
+      },
+      "all_issues": [
+        "Missing required section: 'body'"
+      ]
+    }
+  }
 };
 
 const AGENT_LABELS = {
