@@ -15,7 +15,7 @@ def main():
         sys.exit(1)
 
     # Config — update this after creating GitHub repo
-    github_username = "YOUR_GITHUB_USERNAME"
+    github_username = "wzbxjb"
     repo_name = "agent-audit-case"
     url = f"https://{github_username}.github.io/{repo_name}/dashboard/"
 
