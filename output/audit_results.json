@@ -1,0 +1,1769 @@
+{
+  "meta": {
+    "project": "Agent Quality Audit — digital-marketing-pro Case Study",
+    "brand": "TechGlow",
+    "evaluation_date": "2026-05-15",
+    "total_files": 8,
+    "total_agents": 4
+  },
+  "overall": {
+    "avg_composite_score": 49.7,
+    "avg_hallucination_rate": 16.8,
+    "overall_claim_accuracy": 0.0,
+    "best_agent": {
+      "name": "social_media_manager",
+      "score": 78.4
+    },
+    "worst_agent": {
+      "name": "content_creator",
+      "score": 25.4
+    }
+  },
+  "agents": {
+    "content_creator": {
+      "agent": "content_creator",
+      "files_evaluated": 2,
+      "composite_score": 25.4,
+      "scores": {
+        "hallucination": 26.0,
+        "claim_verification": 0.0,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 0,
+          "interpretation": "Critical hallucination risk - do not publish",
+          "total_flags": 32,
+          "by_type": {
+            "unverified_statistics": 23,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 9,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 52,
+          "interpretation": "High hallucination risk - revision required",
+          "total_flags": 12,
+          "by_type": {
+            "unverified_statistics": 9,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 3,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 39,
+        "contradicted": 0,
+        "total": 39
+      },
+      "all_issues": [
+        "Missing required section: 'title'",
+        "Missing required section: 'conclusion'",
+        "Missing required section: 'title'",
+        "Missing required section: 'conclusion'"
+      ]
+    },
+    "email_specialist": {
+      "agent": "email_specialist",
+      "files_evaluated": 2,
+      "composite_score": 47.0,
+      "scores": {
+        "hallucination": 80.0,
+        "claim_verification": 0.0,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 84,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 4,
+          "by_type": {
+            "unverified_statistics": 1,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 3,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 76,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 6,
+          "by_type": {
+            "unverified_statistics": 5,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 1,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 4,
+        "contradicted": 0,
+        "total": 4
+      },
+      "all_issues": [
+        "Missing required section: 'body'",
+        "Missing required section: 'cta'",
+        "Missing required section: 'body'",
+        "Missing required section: 'cta'"
+      ]
+    },
+    "seo_specialist": {
+      "agent": "seo_specialist",
+      "files_evaluated": 2,
+      "composite_score": 48.0,
+      "scores": {
+        "hallucination": 76.0,
+        "claim_verification": 7.5,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 80,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 5,
+          "by_type": {
+            "unverified_statistics": 0,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 5,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 72,
+          "interpretation": "Moderate hallucination risk - review recommended",
+          "total_flags": 6,
+          "by_type": {
+            "unverified_statistics": 2,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 4,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 1
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 1,
+        "unverified": 4,
+        "contradicted": 0,
+        "total": 5
+      },
+      "all_issues": [
+        "Missing required section: 'target_audience'",
+        "Missing required section: 'key_messages'",
+        "Missing required section: 'objective'",
+        "Missing required section: 'key_messages'"
+      ]
+    },
+    "social_media_manager": {
+      "agent": "social_media_manager",
+      "files_evaluated": 2,
+      "composite_score": 78.4,
+      "scores": {
+        "hallucination": 96.0,
+        "claim_verification": 50.0,
+        "output_validation": 90.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 100,
+          "interpretation": "Minimal hallucination risk",
+          "total_flags": 0,
+          "by_type": {
+            "unverified_statistics": 0,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 0,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 92,
+          "interpretation": "Minimal hallucination risk",
+          "total_flags": 2,
+          "by_type": {
+            "unverified_statistics": 1,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 1,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 1,
+        "contradicted": 0,
+        "total": 1
+      },
+      "all_issues": [
+        "Missing required section: 'body'"
+      ]
+    }
+  },
+  "files": [
+    {
+      "file": "output/agent_outputs/content_creator/blog_buying_guide.md",
+      "agent": "content_creator",
+      "word_count": 997,
+      "hallucination": {
+        "hallucination_score": 0,
+        "interpretation": "Critical hallucination risk - do not publish",
+        "checks": {
+          "unverified_statistics": [
+            {
+              "type": "unverified_statistic",
+              "value": "16 million",
+              "stat_type": "large_number",
+              "context": "Below 300 lumens per bar looks dim even at full brightness with daylight present.\n\n**Color Range and White Tunability.** Cheaper lights advertise \"16 million colors\" but fall apart on whites — their w",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$70",
+              "stat_type": "dollar_amount",
+              "context": "Average: $70 to $100 for quality RGBIC with Wi-Fi.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$100",
+              "stat_type": "dollar_amount",
+              "context": "Average: $70 to $100 for quality RGBIC with Wi-Fi.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$79",
+              "stat_type": "dollar_amount",
+              "context": "TechGlow's 6-pack at $79 includes a mic for music sync.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$100",
+              "stat_type": "dollar_amount",
+              "context": "A 16-inch panel outputs ~2000 lumens at $100 to $150.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$150",
+              "stat_type": "dollar_amount",
+              "context": "A 16-inch panel outputs ~2000 lumens at $100 to $150.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$250",
+              "stat_type": "dollar_amount",
+              "context": "Three-panel kits run $250 to $350.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$350",
+              "stat_type": "dollar_amount",
+              "context": "Three-panel kits run $250 to $350.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$119",
+              "stat_type": "dollar_amount",
+              "context": "TechGlow's Aurora ($119 per panel) uses magnetic connectors to simplify wiring.\n\n**Flex Strips (Best For: Under-cabinets, desk edges, behind furniture).** A 3m (10-foot) strip sticks to nearly any cle",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$35",
+              "stat_type": "dollar_amount",
+              "context": "A quality 3m RGBIC strip costs $35 to $55.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$55",
+              "stat_type": "dollar_amount",
+              "context": "A quality 3m RGBIC strip costs $35 to $55.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$150",
+              "stat_type": "dollar_amount",
+              "context": "Addressable color but likely sacrifices CRI, app polish, and Matter.\n\n**Mid-Range ($150-$300):** A complete one-room setup — where most buyers land.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$300",
+              "stat_type": "dollar_amount",
+              "context": "Addressable color but likely sacrifices CRI, app polish, and Matter.\n\n**Mid-Range ($150-$300):** A complete one-room setup — where most buyers land.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$400",
+              "stat_type": "dollar_amount",
+              "context": "Demand RGBIC, dual Wi-Fi/Bluetooth, Matter, and CRI above 90.\n\n**Premium ($400+):** Multi-room coverage.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "90%",
+              "stat_type": "percentage",
+              "context": "Tunable white is what you use 90% of the time.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$6",
+              "stat_type": "dollar_amount",
+              "context": "Spend $6 on backup cable clips, especially near kitchen steam.\n4. **Mixing ecosystems carelessly.** A WiZ strip, Govee bar, and Hue bulb means three apps to turn off one room.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$180 b",
+              "stat_type": "dollar_amount",
+              "context": "Plan your power strip layout before unboxing.\n\n## Your First Room Setup: A Blueprint\n\nFor a home office or gaming room on a $180 budget: one 6-bar RGBIC kit behind the monitor ($79), one 3m Neon Flex ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$79",
+              "stat_type": "dollar_amount",
+              "context": "Plan your power strip layout before unboxing.\n\n## Your First Room Setup: A Blueprint\n\nFor a home office or gaming room on a $180 budget: one 6-bar RGBIC kit behind the monitor ($79), one 3m Neon Flex ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$50",
+              "stat_type": "dollar_amount",
+              "context": "Plan your power strip layout before unboxing.\n\n## Your First Room Setup: A Blueprint\n\nFor a home office or gaming room on a $180 budget: one 6-bar RGBIC kit behind the monitor ($79), one 3m Neon Flex ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$60",
+              "stat_type": "dollar_amount",
+              "context": "Plan your power strip layout before unboxing.\n\n## Your First Room Setup: A Blueprint\n\nFor a home office or gaming room on a $180 budget: one 6-bar RGBIC kit behind the monitor ($79), one 3m Neon Flex ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "90%",
+              "stat_type": "percentage",
+              "context": "Group all three in one app and set three scenes: Focus (5000K, 90%), Relax (3000K, 40%), Gaming (two-tone blue-purple, 70%).",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "40%",
+              "stat_type": "percentage",
+              "context": "Group all three in one app and set three scenes: Focus (5000K, 90%), Relax (3000K, 40%), Gaming (two-tone blue-purple, 70%).",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "70%",
+              "stat_type": "percentage",
+              "context": "Group all three in one app and set three scenes: Focus (5000K, 90%), Relax (3000K, 40%), Gaming (two-tone blue-purple, 70%).",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            }
+          ],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "first",
+              "context": "Low CRI makes reds look brown and blues look gray.\n\n**RGBIC vs RGB.** The most important distinction and the one first-time buyers miss.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "Best",
+              "context": "A light that takes 3 seconds to respond after a tap will frustrate you by day four.\n\n## Form Factor Face-Off\n\n**Light Bars (Best For: TVs, monitors, shelves).** Compact 10-to-12-inch rectangles for in",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "Best",
+              "context": "Peel-and-stick, 5 minutes.\n\n**Ceiling Panels (Best For: Statement ceilings, living rooms, bedrooms).** Large hex or square panels (12 to 18 inches per side) that mount flush.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "Best",
+              "context": "TechGlow's Aurora ($119 per panel) uses magnetic connectors to simplify wiring.\n\n**Flex Strips (Best For: Under-cabinets, desk edges, behind furniture).** A 3m (10-foot) strip sticks to nearly any cle",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "Best",
+              "context": "Neon Flex variants add a silicone diffuser for a continuous light line at a $15 to $20 premium; worth it for visible spots.\n\n**Desk Lamps (Best For: Home office, bedside).** Bridges task and ambient l",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "first",
+              "context": "Stick to one or two brands and verify Matter compatibility first.\n5. **Skipping lumens for jargon.** \"50W equivalent\" and \"super bright\" are meaningless.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "Only",
+              "context": "Only lumens are real.\n6. **Forgetting power access.** A 6-bar kit needs multiple outlets unless bars daisy-chain.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "First",
+              "context": "Plan your power strip layout before unboxing.\n\n## Your First Room Setup: A Blueprint\n\nFor a home office or gaming room on a $180 budget: one 6-bar RGBIC kit behind the monitor ($79), one 3m Neon Flex ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "first",
+              "context": "Get those three things right, and your first setup feels less like a gadget purchase and more like a room upgrade.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 32,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "$29",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0455
+          },
+          {
+            "text": "$300",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.1
+          },
+          {
+            "text": "$50",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          },
+          {
+            "text": "$60",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          },
+          {
+            "text": "$70",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5938
+          },
+          {
+            "text": "$100",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5857
+          },
+          {
+            "text": "$79",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$100",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5857
+          },
+          {
+            "text": "$150",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0909
+          },
+          {
+            "text": "$250",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0909
+          },
+          {
+            "text": "$350",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0909
+          },
+          {
+            "text": "$119",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0333
+          },
+          {
+            "text": "$35",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$55",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$15",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$20",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.069
+          },
+          {
+            "text": "$60",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          },
+          {
+            "text": "$90",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5294
+          },
+          {
+            "text": "$50",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          },
+          {
+            "text": "$100",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5857
+          },
+          {
+            "text": "$45",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$55",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$150",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0909
+          },
+          {
+            "text": "$300",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.1
+          },
+          {
+            "text": "$400",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.1
+          },
+          {
+            "text": "$180 b",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          },
+          {
+            "text": "$79",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$50",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          },
+          {
+            "text": "$60",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0938
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 29,
+          "contradicted": 0,
+          "total": 29
+        }
+      },
+      "output_validation": {
+        "validation_score": 60,
+        "interpretation": "Fair — several issues need attention",
+        "schema": "blog_post",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [
+              "introduction",
+              "body"
+            ],
+            "missing": [
+              "title",
+              "conclusion"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 939,
+            "min": 300,
+            "max": null
+          },
+          "format": {
+            "status": "pass",
+            "details": {
+              "has_headings": true,
+              "has_paragraphs": true
+            }
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'title'",
+          "Missing required section: 'conclusion'"
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "output/agent_outputs/content_creator/blog_category_education.md",
+      "agent": "content_creator",
+      "word_count": 983,
+      "hallucination": {
+        "hallucination_score": 52,
+        "interpretation": "High hallucination risk - revision required",
+        "checks": {
+          "unverified_statistics": [
+            {
+              "type": "unverified_statistic",
+              "value": "1%",
+              "stat_type": "percentage",
+              "context": "Total cost for this setup: about $70 to $120.\n\n**Bedroom:** A wake-up routine that gradually increases brightness from 1% to 80% over 15 minutes, shifting from warm amber to cool white, is gentler tha",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "80%",
+              "stat_type": "percentage",
+              "context": "Total cost for this setup: about $70 to $120.\n\n**Bedroom:** A wake-up routine that gradually increases brightness from 1% to 80% over 15 minutes, shifting from warm amber to cool white, is gentler tha",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$70",
+              "stat_type": "dollar_amount",
+              "context": "Total cost for this setup: about $70 to $120.\n\n**Bedroom:** A wake-up routine that gradually increases brightness from 1% to 80% over 15 minutes, shifting from warm amber to cool white, is gentler tha",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$120",
+              "stat_type": "dollar_amount",
+              "context": "Total cost for this setup: about $70 to $120.\n\n**Bedroom:** A wake-up routine that gradually increases brightness from 1% to 80% over 15 minutes, shifting from warm amber to cool white, is gentler tha",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "over 15",
+              "stat_type": "qualified_number",
+              "context": "Total cost for this setup: about $70 to $120.\n\n**Bedroom:** A wake-up routine that gradually increases brightness from 1% to 80% over 15 minutes, shifting from warm amber to cool white, is gentler tha",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$120",
+              "stat_type": "dollar_amount",
+              "context": "Studies consistently show color temperature affects alertness and typing accuracy; this is the easiest productivity upgrade most people never think about.\n\n## What to Spend and What to Expect\n\nA solid",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$160",
+              "stat_type": "dollar_amount",
+              "context": "Studies consistently show color temperature affects alertness and typing accuracy; this is the easiest productivity upgrade most people never think about.\n\n## What to Spend and What to Expect\n\nA solid",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$250",
+              "stat_type": "dollar_amount",
+              "context": "Adding a ceiling panel for a second room pushes the total to around $250.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$180 m",
+              "stat_type": "dollar_amount",
+              "context": "For context, replacing a single room with Philips Hue (three color bulbs plus a Hue Bridge) costs $180 minimum and does not include any addressable strips.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            }
+          ],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "First",
+              "context": "First, it connects to a network — usually Wi-Fi or Bluetooth — so you control it from your phone, your voice assistant, or an automation schedule.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "only",
+              "context": "A standard RGB strip can only show one color at a time across the entire length.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "First",
+              "context": "First, the Matter smart home standard — backed by Apple, Google, Amazon, and Samsung — finally achieved broad device certification, meaning lights from different brands interoperate without workaround",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 12,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "$120",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0667
+          },
+          {
+            "text": "$79",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$89",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.069
+          },
+          {
+            "text": "$45",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0625
+          },
+          {
+            "text": "$70",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5938
+          },
+          {
+            "text": "$120",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0667
+          },
+          {
+            "text": "$120",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0667
+          },
+          {
+            "text": "$160",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0909
+          },
+          {
+            "text": "$250",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0909
+          },
+          {
+            "text": "$180 m",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.1081
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 10,
+          "contradicted": 0,
+          "total": 10
+        }
+      },
+      "output_validation": {
+        "validation_score": 60,
+        "interpretation": "Fair — several issues need attention",
+        "schema": "blog_post",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [
+              "introduction",
+              "body"
+            ],
+            "missing": [
+              "title",
+              "conclusion"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 956,
+            "min": 300,
+            "max": null
+          },
+          "format": {
+            "status": "pass",
+            "details": {
+              "has_headings": true,
+              "has_paragraphs": true
+            }
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'title'",
+          "Missing required section: 'conclusion'"
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "output/agent_outputs/email_specialist/abandoned_cart_email.md",
+      "agent": "email_specialist",
+      "word_count": 364,
+      "hallucination": {
+        "hallucination_score": 84,
+        "interpretation": "Low hallucination risk",
+        "checks": {
+          "unverified_statistics": [
+            {
+              "type": "unverified_statistic",
+              "value": "$75",
+              "stat_type": "dollar_amount",
+              "context": "Whether it is a chill evening glow for winding down, focused white light for deep work, or a full color show for hosting friends — the setup adjusts to your mood, not the other way around.\n\n**A few th",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            }
+          ],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "the best",
+              "context": "Here is what you are getting into.\n---\n\nHi {first_name},\n\nNoticed you left a few things behind in your cart — no stress, it happens to the best of us.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "best",
+              "context": "Your cart has some of our best-selling smart lighting waiting for you.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "first",
+              "context": "If it does not click, send it back — we cover return shipping on your first order.\n- **Compatibility:** Every TechGlow product works with Alexa, Google Home, and Apple HomeKit.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 4,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "$75",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5938
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 1,
+          "contradicted": 0,
+          "total": 1
+        }
+      },
+      "output_validation": {
+        "validation_score": 60,
+        "interpretation": "Fair — several issues need attention",
+        "schema": "email",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [
+              "subject_line"
+            ],
+            "missing": [
+              "body",
+              "cta"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 357,
+            "min": 50,
+            "max": null
+          },
+          "format": {
+            "status": "pass",
+            "details": {
+              "has_cta": true,
+              "has_subject": true
+            }
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'body'",
+          "Missing required section: 'cta'"
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "output/agent_outputs/email_specialist/promo_email.md",
+      "agent": "email_specialist",
+      "word_count": 331,
+      "hallucination": {
+        "hallucination_score": 76,
+        "interpretation": "Low hallucination risk",
+        "checks": {
+          "unverified_statistics": [
+            {
+              "type": "unverified_statistic",
+              "value": "15%",
+              "stat_type": "percentage",
+              "context": "---\nFrom: TechGlow <hello@techglowlighting.com>\nSubject: Transform Your Room in 5 Minutes — Aurora Ceiling Panel Now 15% Off\nPreheader: Light up your ceiling with 16 million colors.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "16 million",
+              "stat_type": "large_number",
+              "context": "---\nFrom: TechGlow <hello@techglowlighting.com>\nSubject: Transform Your Room in 5 Minutes — Aurora Ceiling Panel Now 15% Off\nPreheader: Light up your ceiling with 16 million colors.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$129.99",
+              "stat_type": "dollar_amount",
+              "context": "It turns a blank ceiling into the focal point of your room — no paint, no renovation, no electrician required.\n\n**Meet the Aurora Ceiling Panel ($129.99, now $110.49 with code GLOW15)**\n\nThe Aurora is",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "$110.49",
+              "stat_type": "dollar_amount",
+              "context": "It turns a blank ceiling into the focal point of your room — no paint, no renovation, no electrician required.\n\n**Meet the Aurora Ceiling Panel ($129.99, now $110.49 with code GLOW15)**\n\nThe Aurora is",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "16 million",
+              "stat_type": "large_number",
+              "context": "Here is what makes it different:\n\n- **16 million colors** across the full RGBIC spectrum, controlled from your phone\n- **Music Sync** that pulses in real time with whatever you are playing — Spotify, ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            }
+          ],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "the best",
+              "context": "It is hands-down the best $130 I have spent on this room.\" — Marcus T., verified buyer (4.3-star Amazon rating across 1,200+ reviews)\n\n**[Shop the Aurora Ceiling Panel →](https://techglowlighting.com/",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 6,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "$129.99",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0556
+          },
+          {
+            "text": "$110.49",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5526
+          },
+          {
+            "text": "$130",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0667
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 3,
+          "contradicted": 0,
+          "total": 3
+        }
+      },
+      "output_validation": {
+        "validation_score": 60,
+        "interpretation": "Fair — several issues need attention",
+        "schema": "email",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [
+              "subject_line"
+            ],
+            "missing": [
+              "body",
+              "cta"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 321,
+            "min": 50,
+            "max": null
+          },
+          "format": {
+            "status": "pass",
+            "details": {
+              "has_cta": true,
+              "has_subject": true
+            }
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'body'",
+          "Missing required section: 'cta'"
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "output/agent_outputs/seo_specialist/keyword_strategy.md",
+      "agent": "seo_specialist",
+      "word_count": 1203,
+      "hallucination": {
+        "hallucination_score": 80,
+        "interpretation": "Low hallucination risk",
+        "checks": {
+          "unverified_statistics": [],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "best",
+              "context": "Content strategy: blog posts, buying guides, comparison articles.\n\n| Keyword | US Volume | Content Type |\n|---|---|---|\n| difference between RGB and RGBIC | 4,400 | Comparison guide |\n| how to set up ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "best",
+              "context": "Target with comparison pages, product roundups, and pricing pages.\n\n| Keyword | US Volume | Content Type |\n|---|---|---|\n| best smart ambient lighting brand | 5,800 | Brand comparison hub |\n| Philips ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "best",
+              "context": "Target with comparison pages, product roundups, and pricing pages.\n\n| Keyword | US Volume | Content Type |\n|---|---|---|\n| best smart ambient lighting brand | 5,800 | Brand comparison hub |\n| Philips ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "best",
+              "context": "Target with comparison pages, product roundups, and pricing pages.\n\n| Keyword | US Volume | Content Type |\n|---|---|---|\n| best smart ambient lighting brand | 5,800 | Brand comparison hub |\n| Philips ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "only",
+              "context": "Philips Hue has only partially localized pages, and Govee has no German-language content strategy.\n\n---\n\n## 5.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 5,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 15.0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "$130,",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.0968
+          },
+          {
+            "text": "$67.50",
+            "claim_type": "dollar_amount",
+            "status": "partially_verified",
+            "evidence_match": "average order value of $67.50",
+            "source": "Shopify analytics",
+            "confidence": 0.6714
+          },
+          {
+            "text": "$99",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.5
+          },
+          {
+            "text": "grew 41%",
+            "claim_type": "percentage_change",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.1852
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 1,
+          "unverified": 3,
+          "contradicted": 0,
+          "total": 4
+        }
+      },
+      "output_validation": {
+        "validation_score": 60,
+        "interpretation": "Fair — several issues need attention",
+        "schema": "content_brief",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [
+              "objective",
+              "outline"
+            ],
+            "missing": [
+              "target_audience",
+              "key_messages"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 930,
+            "min": 100,
+            "max": null
+          },
+          "format": {
+            "status": "pass",
+            "details": {
+              "has_headings": true
+            }
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'target_audience'",
+          "Missing required section: 'key_messages'"
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "output/agent_outputs/seo_specialist/landing_page_seo.md",
+      "agent": "seo_specialist",
+      "word_count": 1333,
+      "hallucination": {
+        "hallucination_score": 72,
+        "interpretation": "Moderate hallucination risk - review recommended",
+        "checks": {
+          "unverified_statistics": [
+            {
+              "type": "unverified_statistic",
+              "value": "64%",
+              "stat_type": "percentage",
+              "context": "Target: consolidate CSS into 2 files maximum and JavaScript into 3 files maximum (Shopify theme, product-specific, analytics deferred).\n\n### Mobile-First Considerations\nOver 64% of the smart lighting ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            },
+            {
+              "type": "unverified_statistic",
+              "value": "Over 64",
+              "stat_type": "qualified_number",
+              "context": "Target: consolidate CSS into 2 files maximum and JavaScript into 3 files maximum (Shopify theme, product-specific, analytics deferred).\n\n### Mobile-First Considerations\nOver 64% of the smart lighting ",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            }
+          ],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "superlative",
+              "value": "best",
+              "context": "# TechGlow Landing Page SEO Optimization Guide\n\n## Overview\n\nThis guide covers on-page SEO best practices for TechGlow's key landing pages: the homepage, four product line category pages, and the top-",
+              "severity": "high",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "Largest",
+              "context": "Page Speed Considerations\n\n### Current Benchmarks (Target)\n| Metric | Industry Average | TechGlow Target |\n|---|---|---|\n| LCP (Largest Contentful Paint) | 2.8s | < 1.8s |\n| FID (First Input Delay) | ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "First",
+              "context": "Page Speed Considerations\n\n### Current Benchmarks (Target)\n| Metric | Industry Average | TechGlow Target |\n|---|---|---|\n| LCP (Largest Contentful Paint) | 2.8s | < 1.8s |\n| FID (First Input Delay) | ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            },
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "First",
+              "context": "Target: consolidate CSS into 2 files maximum and JavaScript into 3 files maximum (Shopify theme, product-specific, analytics deferred).\n\n### Mobile-First Considerations\nOver 64% of the smart lighting ",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 6,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "15,000+ Customers",
+            "claim_type": "customer_count",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.2766
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 1,
+          "contradicted": 0,
+          "total": 1
+        }
+      },
+      "output_validation": {
+        "validation_score": 60,
+        "interpretation": "Fair — several issues need attention",
+        "schema": "content_brief",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [
+              "target_audience",
+              "outline"
+            ],
+            "missing": [
+              "objective",
+              "key_messages"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 1162,
+            "min": 100,
+            "max": null
+          },
+          "format": {
+            "status": "pass",
+            "details": {
+              "has_headings": true
+            }
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'objective'",
+          "Missing required section: 'key_messages'"
+        ],
+        "passed": false
+      }
+    },
+    {
+      "file": "output/agent_outputs/social_media_manager/instagram_post.md",
+      "agent": "social_media_manager",
+      "word_count": 415,
+      "hallucination": {
+        "hallucination_score": 100,
+        "interpretation": "Minimal hallucination risk",
+        "checks": {
+          "unverified_statistics": [],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 0,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 100,
+        "interpretation": "No verifiable claims found in content",
+        "claims": [],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 0,
+          "contradicted": 0,
+          "total": 0
+        }
+      },
+      "output_validation": {
+        "validation_score": 100,
+        "interpretation": "Excellent — content meets all requirements",
+        "schema": "social_post",
+        "checks": {
+          "sections": {
+            "status": "pass",
+            "found": [
+              "body"
+            ],
+            "missing": []
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 400,
+            "min": 5,
+            "max": 500
+          },
+          "format": {
+            "status": "pass",
+            "details": {}
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [],
+        "passed": true
+      }
+    },
+    {
+      "file": "output/agent_outputs/social_media_manager/linkedin_post.md",
+      "agent": "social_media_manager",
+      "word_count": 367,
+      "hallucination": {
+        "hallucination_score": 92,
+        "interpretation": "Minimal hallucination risk",
+        "checks": {
+          "unverified_statistics": [
+            {
+              "type": "unverified_statistic",
+              "value": "16 million",
+              "stat_type": "large_number",
+              "context": "A smart bulb with 16 million colors means nothing if the user cannot translate that into how their living room *feels* at 8 PM on a Tuesday.",
+              "severity": "medium",
+              "reason": "Statistic lacks source attribution. No citation, source reference, date, or hyperlink found within surrounding context."
+            }
+          ],
+          "suspicious_urls": [],
+          "unsubstantiated_claims": [
+            {
+              "type": "unsubstantiated_claim",
+              "claim_type": "exclusive_claim",
+              "value": "the only",
+              "context": "Brightness was the only KPI.",
+              "severity": "medium",
+              "reason": "Superlative or exclusive claim lacks substantiation. Add a certification, ranking source, or qualifying context."
+            }
+          ],
+          "entities_to_verify": [],
+          "missing_hedging": []
+        },
+        "total_flags": 2,
+        "critical_flags": 0
+      },
+      "claim_verification": {
+        "verification_score": 0,
+        "interpretation": "Unverified - claims are not supported by provided evidence",
+        "claims": [
+          {
+            "text": "$44 billion",
+            "claim_type": "dollar_amount",
+            "status": "unverified",
+            "evidence_match": null,
+            "source": null,
+            "confidence": 0.1282
+          }
+        ],
+        "summary": {
+          "verified": 0,
+          "partially_verified": 0,
+          "unverified": 1,
+          "contradicted": 0,
+          "total": 1
+        }
+      },
+      "output_validation": {
+        "validation_score": 80,
+        "interpretation": "Good — minor issues found",
+        "schema": "social_post",
+        "checks": {
+          "sections": {
+            "status": "fail",
+            "found": [],
+            "missing": [
+              "body"
+            ]
+          },
+          "word_count": {
+            "status": "pass",
+            "count": 350,
+            "min": 5,
+            "max": 500
+          },
+          "format": {
+            "status": "pass",
+            "details": {}
+          },
+          "placeholders": {
+            "status": "pass",
+            "found": []
+          },
+          "consistency": {
+            "status": "pass",
+            "warnings": []
+          }
+        },
+        "issues": [
+          "Missing required section: 'body'"
+        ],
+        "passed": false
+      }
+    }
+  ]
+}
