@@ -1,0 +1,35 @@
+{
+  "brand_name": "TechGlow",
+  "slug": "techglow",
+  "industry": "smart-home-lighting",
+  "business_model": "DTC",
+  "description": "Direct-to-consumer smart ambient lighting brand. Sells Wi-Fi/Bluetooth-enabled LED mood lights through Shopify store and Amazon US marketplace.",
+  "product_lines": [
+    "Smart RGBIC Light Bars (6-pack)",
+    "Aurora Ceiling Panel (single)",
+    "Neon Flex Strip (3m)",
+    "Desk Lamp Pro with Qi charging"
+  ],
+  "key_facts": {
+    "founded": 2022,
+    "headquarters": "Shenzhen, China",
+    "monthly_revenue_usd": 80000,
+    "primary_markets": ["US", "Germany"],
+    "amazon_rating": 4.3,
+    "total_sku_count": 12,
+    "avg_order_value_usd": 67.50,
+    "return_rate_percent": 4.2,
+    "website": "https://techglowlighting.com",
+    "shopify_store": "techglowlighting.myshopify.com"
+  },
+  "competitors": [
+    {"name": "Philips Hue", "price_range": "premium", "market_share_note": "market leader in smart lighting"},
+    {"name": "Govee", "price_range": "mid-market", "market_share_note": "strong in RGBIC segment"},
+    {"name": "Nanoleaf", "price_range": "premium", "market_share_note": "known for wall panels"}
+  ],
+  "target_audience": {
+    "primary": "US-based tech-savvy homeowners aged 25-40, interested in smart home aesthetics",
+    "secondary": "German consumers aged 25-45, value energy efficiency and build quality"
+  },
+  "compliance": ["GDPR", "CCPA"]
+}

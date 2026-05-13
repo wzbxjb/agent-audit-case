@@ -1,0 +1,64 @@
+{
+  "evidence": [
+    {
+      "claim": "TechGlow was founded in 2022",
+      "source": "Company registration records",
+      "date": "2022-06",
+      "verified": true
+    },
+    {
+      "claim": "monthly revenue of $80,000",
+      "source": "Internal sales dashboard",
+      "date": "2026-04",
+      "verified": true
+    },
+    {
+      "claim": "12 SKUs across 4 product lines",
+      "source": "Product catalog",
+      "date": "2026-05",
+      "verified": true
+    },
+    {
+      "claim": "average order value of $67.50",
+      "source": "Shopify analytics",
+      "date": "2026-Q1",
+      "verified": true
+    },
+    {
+      "claim": "return rate of 4.2%",
+      "source": "Operations report",
+      "date": "2026-Q1",
+      "verified": true
+    },
+    {
+      "claim": "Amazon rating 4.3 stars",
+      "source": "Amazon seller central",
+      "date": "2026-05",
+      "verified": true
+    },
+    {
+      "claim": "primary markets are US and Germany",
+      "source": "Sales by region report",
+      "date": "2026-Q1",
+      "verified": true
+    },
+    {
+      "claim": "100% customer satisfaction rate",
+      "source": "N/A — this metric is not tracked",
+      "date": "N/A",
+      "verified": false
+    },
+    {
+      "claim": "500,000 units sold worldwide",
+      "source": "N/A — actual number is approximately 24,000 lifetime",
+      "date": "N/A",
+      "verified": false
+    },
+    {
+      "claim": "featured in TechCrunch and Wired",
+      "source": "N/A — no such coverage exists",
+      "date": "N/A",
+      "verified": false
+    }
+  ]
+}
