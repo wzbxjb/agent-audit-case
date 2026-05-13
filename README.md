@@ -5,7 +5,7 @@
 ## 快速开始
 
 1. 阅读 [案例研究报告](case_study.md)
-2. 查看 [审计仪表板](https://wzbxjb.github.io/agent-audit-case/dashboard/)
+2. 查看 [审计仪表板](https://wzbxjb.github.io/agent-audit-case/)
 3. 或扫描下方 QR 码
 
 ![QR Code](output/qr_code.png)

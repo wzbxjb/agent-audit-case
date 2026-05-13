@@ -17,7 +17,7 @@ def main():
     # Config — update this after creating GitHub repo
     github_username = "wzbxjb"
     repo_name = "agent-audit-case"
-    url = f"https://{github_username}.github.io/{repo_name}/dashboard/"
+    url = f"https://{github_username}.github.io/{repo_name}/"
 
     print(f"Generating QR code for: {url}")
 

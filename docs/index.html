@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Quality Audit — TechGlow Case Study</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root { --bg: #0f172a; --card: #1e293b; --text: #e2e8f0; --muted: #94a3b8;
+          --accent: #38bdf8; --danger: #ef4444; --warn: #f59e0b; --ok: #22c55e; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .hero { text-align: center; padding: 3rem 0 2rem; }
+  .hero h1 { font-size: 2.2rem; margin-bottom: .5rem; }
+  .hero .subtitle { color: var(--muted); font-size: 1rem; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .kpi-card { background: var(--card); border-radius: 12px; padding: 1.5rem; text-align: center; }
+  .kpi-card .value { font-size: 2.4rem; font-weight: 700; }
+  .kpi-card .label { color: var(--muted); font-size: .85rem; margin-top: .25rem; }
+  .kpi-card .value.danger { color: var(--danger); }
+  .kpi-card .value.warn { color: var(--warn); }
+  .kpi-card .value.ok { color: var(--ok); }
+  section { margin: 3rem 0; }
+  section h2 { font-size: 1.4rem; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid #334155; }
+  .chart-wrap { background: var(--card); border-radius: 12px; padding: 1.5rem; max-height: 400px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 12px; overflow: hidden; }
+  th, td { padding: .75rem 1rem; text-align: left; }
+  th { background: #334155; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+  tr:not(:last-child) td { border-bottom: 1px solid #334155; }
+  .badge { display: inline-block; padding: .15rem .5rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+  .badge-high { background: #7f1d1d; color: #fca5a5; }
+  .badge-medium { background: #78350f; color: #fcd34d; }
+  .badge-low { background: #14532d; color: #86efac; }
+  .flag-quote { background: #1e293b; border-left: 3px solid var(--danger); padding: .75rem 1rem; margin: .5rem 0; border-radius: 0 8px 8px 0; font-size: .9rem; color: var(--muted); }
+  .flag-quote .agent-tag { color: var(--accent); font-weight: 600; }
+  .findings { background: var(--card); border-radius: 12px; padding: 1.5rem; }
+  .findings li { margin: .75rem 0 0 1.5rem; }
+  .foot { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #334155; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <h1>Agent Quality Audit Report</h1>
+    <p class="subtitle">Brand: TechGlow (DTC Smart Lighting) &nbsp;|&nbsp; Platform: digital-marketing-pro v3.2 &nbsp;|&nbsp; 2026-05-15</p>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="value" id="kpi-composite">--</div>
+      <div class="label">Overall Composite Score</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value" id="kpi-hallucination">--</div>
+      <div class="label">Avg Hallucination Flags / Agent</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value" id="kpi-accuracy">--%</div>
+      <div class="label">Overall Claim Accuracy</div>
+    </div>
+    <div class="kpi-card">
+      <div class="value" id="kpi-best">--</div>
+      <div class="label">Best Performing Agent</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Agent Comparison (Radar)</h2>
+    <div class="chart-wrap"><canvas id="radarChart"></canvas></div>
+  </section>
+
+  <section>
+    <h2>Agent Ranking</h2>
+    <table>
+      <thead><tr><th>Agent</th><th>Composite</th><th>Hallucination</th><th>Claims</th><th>Structure</th></tr></thead>
+      <tbody id="ranking-body"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Hallucination Detections by Type</h2>
+    <div class="chart-wrap"><canvas id="hallucinationChart"></canvas></div>
+    <div id="hallucination-examples" style="margin-top:1.5rem;"></div>
+  </section>
+
+  <section>
+    <h2>Claim Verification Results</h2>
+    <div class="chart-wrap"><canvas id="claimChart"></canvas></div>
+  </section>
+
+  <section>
+    <h2>Methodology</h2>
+    <div class="findings">
+      <p>This audit uses digital-marketing-pro v3.2's built-in detection tools to reverse-evaluate content from 4 marketing agents across 8 outputs:</p>
+      <ol style="margin:1rem 0 0 1.5rem;">
+        <li><strong>Hallucination Detection</strong> — Detects fabricated statistics, fake URLs, unsubstantiated claims, unverified entity references, and definitive claims lacking hedging language</li>
+        <li><strong>Claim Verification</strong> — Extracts factual claims from content and cross-references against a brand evidence file. Classifies each as verified, partially verified, unverified, or contradicted</li>
+        <li><strong>Output Validation</strong> — Validates content structure against type-specific schemas (required sections, word count bounds, format rules, placeholder detection)</li>
+      </ol>
+      <p style="margin-top:1rem;">Composite scoring weights: Hallucination 40% + Claim Verification 35% + Structure 25%. Hallucination detection carries the highest weight because factual accuracy is the primary gating factor for marketing content usefulness.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Findings &amp; Recommendations</h2>
+    <div class="findings" id="findings"></div>
+  </section>
+
+  <div class="foot">
+    <p>Agent Audit Case Study &middot; Built with digital-marketing-pro v3.2 + Python + Chart.js</p>
+    <p>MIT License &middot; <a href="https://github.com/indranilbanerjee/digital-marketing-pro" style="color:var(--accent)">Original Project</a></p>
+  </div>
+
+</div>
+
+<script>
+const auditData = {
+  "meta": {
+    "project": "Agent Quality Audit — digital-marketing-pro Case Study",
+    "brand": "TechGlow",
+    "evaluation_date": "2026-05-15",
+    "total_files": 8,
+    "total_agents": 4
+  },
+  "overall": {
+    "avg_composite_score": 49.7,
+    "avg_hallucination_rate": 16.8,
+    "overall_claim_accuracy": 0.0,
+    "best_agent": {
+      "name": "social_media_manager",
+      "score": 78.4
+    },
+    "worst_agent": {
+      "name": "content_creator",
+      "score": 25.4
+    }
+  },
+  "agents": {
+    "content_creator": {
+      "agent": "content_creator",
+      "files_evaluated": 2,
+      "composite_score": 25.4,
+      "scores": {
+        "hallucination": 26.0,
+        "claim_verification": 0.0,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 0,
+          "interpretation": "Critical hallucination risk - do not publish",
+          "total_flags": 32,
+          "by_type": {
+            "unverified_statistics": 23,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 9,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 52,
+          "interpretation": "High hallucination risk - revision required",
+          "total_flags": 12,
+          "by_type": {
+            "unverified_statistics": 9,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 3,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 39,
+        "contradicted": 0,
+        "total": 39
+      },
+      "all_issues": [
+        "Missing required section: 'title'",
+        "Missing required section: 'conclusion'",
+        "Missing required section: 'title'",
+        "Missing required section: 'conclusion'"
+      ]
+    },
+    "email_specialist": {
+      "agent": "email_specialist",
+      "files_evaluated": 2,
+      "composite_score": 47.0,
+      "scores": {
+        "hallucination": 80.0,
+        "claim_verification": 0.0,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 84,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 4,
+          "by_type": {
+            "unverified_statistics": 1,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 3,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 76,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 6,
+          "by_type": {
+            "unverified_statistics": 5,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 1,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 4,
+        "contradicted": 0,
+        "total": 4
+      },
+      "all_issues": [
+        "Missing required section: 'body'",
+        "Missing required section: 'cta'",
+        "Missing required section: 'body'",
+        "Missing required section: 'cta'"
+      ]
+    },
+    "seo_specialist": {
+      "agent": "seo_specialist",
+      "files_evaluated": 2,
+      "composite_score": 48.0,
+      "scores": {
+        "hallucination": 76.0,
+        "claim_verification": 7.5,
+        "output_validation": 60.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 80,
+          "interpretation": "Low hallucination risk",
+          "total_flags": 5,
+          "by_type": {
+            "unverified_statistics": 0,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 5,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 72,
+          "interpretation": "Moderate hallucination risk - review recommended",
+          "total_flags": 6,
+          "by_type": {
+            "unverified_statistics": 2,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 4,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 1
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 1,
+        "unverified": 4,
+        "contradicted": 0,
+        "total": 5
+      },
+      "all_issues": [
+        "Missing required section: 'target_audience'",
+        "Missing required section: 'key_messages'",
+        "Missing required section: 'objective'",
+        "Missing required section: 'key_messages'"
+      ]
+    },
+    "social_media_manager": {
+      "agent": "social_media_manager",
+      "files_evaluated": 2,
+      "composite_score": 78.4,
+      "scores": {
+        "hallucination": 96.0,
+        "claim_verification": 50.0,
+        "output_validation": 90.0
+      },
+      "hallucination_flags": [
+        {
+          "score": 100,
+          "interpretation": "Minimal hallucination risk",
+          "total_flags": 0,
+          "by_type": {
+            "unverified_statistics": 0,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 0,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        },
+        {
+          "score": 92,
+          "interpretation": "Minimal hallucination risk",
+          "total_flags": 2,
+          "by_type": {
+            "unverified_statistics": 1,
+            "suspicious_urls": 0,
+            "unsubstantiated_claims": 1,
+            "entities_to_verify": 0,
+            "missing_hedging": 0
+          },
+          "by_severity": {
+            "critical": 0,
+            "high": 0
+          }
+        }
+      ],
+      "claim_summary": {
+        "verified": 0,
+        "partially_verified": 0,
+        "unverified": 1,
+        "contradicted": 0,
+        "total": 1
+      },
+      "all_issues": [
+        "Missing required section: 'body'"
+      ]
+    }
+  }
+};
+
+const AGENT_LABELS = {
+  "seo_specialist": "SEO Specialist",
+  "content_creator": "Content Creator",
+  "email_specialist": "Email Specialist",
+  "social_media_manager": "Social Media Manager"
+};
+
+const COLORS = { seo_specialist: '#38bdf8', content_creator: '#a78bfa', email_specialist: '#f472b6', social_media_manager: '#fb923c' };
+
+function render() {
+  const d = auditData;
+  const overall = d.overall;
+
+  const cs = overall.avg_composite_score;
+  document.getElementById('kpi-composite').textContent = cs;
+  document.getElementById('kpi-composite').className = 'value ' + (cs >= 70 ? 'ok' : cs >= 50 ? 'warn' : 'danger');
+  document.getElementById('kpi-hallucination').textContent = overall.avg_hallucination_rate;
+  document.getElementById('kpi-accuracy').textContent = overall.overall_claim_accuracy;
+  document.getElementById('kpi-best').textContent = AGENT_LABELS[overall.best_agent.name] || overall.best_agent.name;
+
+  const agents = Object.entries(d.agents).sort((a, b) => b[1].composite_score - a[1].composite_score);
+  const tbody = document.getElementById('ranking-body');
+  tbody.innerHTML = agents.map(([name, data]) => {
+    const s = data.scores;
+    const cls = data.composite_score >= 70 ? 'ok' : data.composite_score >= 50 ? 'warn' : 'danger';
+    return `<tr>
+      <td>${AGENT_LABELS[name] || name}</td>
+      <td><span class="value ${cls}">${data.composite_score}</span></td>
+      <td>${s.hallucination}</td>
+      <td>${s.claim_verification}</td>
+      <td>${s.output_validation}</td>
+    </tr>`;
+  }).join('');
+
+  const ctx = document.getElementById('radarChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Hallucination', 'Claim Accuracy', 'Structure', 'Factual Density', 'Source Quality', 'Overall Reliability'],
+      datasets: agents.map(([name, data]) => ({
+        label: AGENT_LABELS[name] || name,
+        data: [
+          data.scores.hallucination,
+          data.scores.claim_verification,
+          data.scores.output_validation,
+          Math.round(data.scores.hallucination * 0.6 + data.scores.claim_verification * 0.4),
+          Math.round(data.scores.claim_verification * 0.7 + data.scores.output_validation * 0.3),
+          data.composite_score
+        ],
+        borderColor: COLORS[name] || '#94a3b8',
+        backgroundColor: 'transparent',
+        borderWidth: 2,
+      }))
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: { r: { min: 0, max: 100, ticks: { stepSize: 20, color: '#94a3b8' }, grid: { color: '#334155' }, pointLabels: { color: '#e2e8f0' } } },
+      plugins: { legend: { labels: { color: '#e2e8f0' } } }
+    }
+  });
+
+  const hTypes = ['unverified_statistics', 'suspicious_urls', 'unsubstantiated_claims', 'entities_to_verify', 'missing_hedging'];
+  const hLabels = ['Fake Stats', 'Suspicious URLs', 'Unsubstantiated', 'Entity to Verify', 'Missing Hedging'];
+  const hDatasets = agents.map(([name, data]) => {
+    const flags = data.hallucination_flags || [];
+    const counts = hTypes.map(t => flags.reduce((sum, f) => sum + (f.by_type?.[t] || 0), 0));
+    return { label: AGENT_LABELS[name] || name, data: counts, backgroundColor: COLORS[name] || '#94a3b8' };
+  });
+
+  const hCtx = document.getElementById('hallucinationChart').getContext('2d');
+  new Chart(hCtx, {
+    type: 'bar',
+    data: { labels: hLabels, datasets: hDatasets },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true, ticks: { color: '#94a3b8' }, grid: { color: '#334155' } }, x: { ticks: { color: '#94a3b8' } } },
+      plugins: { legend: { labels: { color: '#e2e8f0' } } }
+    }
+  });
+
+  const cCtx = document.getElementById('claimChart').getContext('2d');
+  new Chart(cCtx, {
+    type: 'bar',
+    data: {
+      labels: agents.map(([n]) => AGENT_LABELS[n] || n),
+      datasets: [
+        { label: 'Verified', data: agents.map(([,d]) => d.claim_summary?.verified || 0), backgroundColor: '#22c55e' },
+        { label: 'Partial', data: agents.map(([,d]) => d.claim_summary?.partially_verified || 0), backgroundColor: '#f59e0b' },
+        { label: 'Unverified', data: agents.map(([,d]) => d.claim_summary?.unverified || 0), backgroundColor: '#ef4444' },
+        { label: 'Contradicted', data: agents.map(([,d]) => d.claim_summary?.contradicted || 0), backgroundColor: '#7f1d1d' },
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: { x: { stacked: true, ticks: { color: '#94a3b8' } }, y: { stacked: true, ticks: { color: '#94a3b8' }, grid: { color: '#334155' } } },
+      plugins: { legend: { labels: { color: '#e2e8f0' } } }
+    }
+  });
+
+  document.getElementById('findings').innerHTML = `
+    <ol>
+      <li><strong>Hallucination issues concentrate on statistics and unsubstantiated claims:</strong> All agents tend to use unsourced statistics, with unsubstantiated claims being the most common flag type. The Social Media Manager performs best (composite ${overall.best_agent.score}), while the Content Creator is most affected by hallucinations (composite ${overall.worst_agent.score}).</li>
+      <li><strong>Cross-agent consistency is insufficient:</strong> Under the same brand profile, agents show significant variance in data references and tone, lacking a unified brand memory verification layer.</li>
+      <li><strong>Detection tools have blind spots:</strong> Pattern-based hallucination detection struggles with "implied exaggeration" — phrases like "industry-leading growth" pass undetected but are fundamentally unverifiable.</li>
+      <li><strong>Claim verification depends on evidence file quality:</strong> The claim-verifier effectively flags claims contradicting evidence, but fuzzy matching is weak for semantically equivalent phrases with different wording.</li>
+      <li><strong>Recommendation:</strong> Add a pre-generation "fact boundary" step where agents must operate within known data ranges, rather than relying solely on post-hoc detection. DM Pro's "Stone vs Opinion" mechanism in the 12-Part Methodology could be strengthened in this direction.</li>
+    </ol>
+  `;
+}
+
+document.addEventListener('DOMContentLoaded', render);
+</script>
+</body>
+</html>
