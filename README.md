@@ -2,7 +2,7 @@
 
 用 Claude Code 数字营销插件的 Agent 系统为跨境电商品牌生成营销内容，再用**自研的 4 个检测引擎**（零 DM Pro 依赖）反向审计 Agent 输出质量。
 
-**作者：王哲 (Wang Zhe)** | 江西财经大学电子商务 2026届 | UIUC MSIM-Data Science 2028届
+**作者：wzbxjb UIUC Data Science 
 
 ## 技术亮点
 
